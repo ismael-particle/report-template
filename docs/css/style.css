@@ -1,0 +1,283 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}	
+
+body{
+	background:##FFFFFF;
+	margin-top: 15px;
+}
+
+/******************************************************************************************
+	CSS Fonts
+******************************************************************************************/
+@font-face{
+	font-family:'Graphik';
+	src:  url('fonts/Graphik-Regular-Web.woff2');
+}
+
+@font-face{
+	font-family:'MD IO 0.4';
+	src:  url('fonts/MDIO0.4-Regular.otf');
+}
+
+h1,h2,h3,h4,h5,p,a{
+	font-family: 'Graphik';
+	font-style: normal;
+}
+
+p{
+	/* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+p .details{
+	/* Highlight/Highlight Small Regular */
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+.title{
+	/* Headings/Heading 2XLarge Emphasis */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 48px;
+
+	/* identical to box height, or 160% */
+	text-align: center;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+	margin: 6px;
+}
+
+.subtitle{
+	/* Headings/Heading XLarge Emphasis */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 40px;
+
+	/* identical to box height, or 167% */
+	align-items: center;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+	margin: 0px;
+}
+
+
+/******************************************************************************************
+	CSS General Tabs
+******************************************************************************************/
+
+/* Style the tab */
+.tab {
+  	overflow: hidden;
+
+  	/*border: 1px solid #ccc;*/
+	/*  background-color: #f1f1f1;*/
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	/* Auto layout */
+	margin-right: 20px;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+	gap: 10px;
+
+
+	/* Primary Color/Particle Blue 500 */
+	background: #FFFFFF;
+	border: 0.2px solid #00334F;
+
+	/*font*/
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	color: #00334F;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	/* Auto layout */
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+	gap: 10px;
+
+	/* Particle Blue/Particle Blue 600 */
+	background: #00E1FF
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background: #00334F;
+
+		/*font*/
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	color: #FFFFFF;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 0px;
+	padding-top: 15px;
+}
+
+/******************************************************************************************
+	CSS Support animation
+******************************************************************************************/
+.tooltip {
+  	position: relative;
+  	display: inline-block;
+  	border-bottom: 1px  black; /* If you want dots under the hoverable text */
+}
+
+.tooltip .tooltiptext {
+  	visibility: hidden;
+  	width: 640px;
+  	background-color: #00334F;
+  	text-align: left;
+  	padding: 2px 0;
+  	border-radius: 0px;
+ 
+  	/* Position the tooltip text - see examples below! */
+  	position: absolute;
+  	z-index: 1;
+}
+
+.tooltip .tooltiptext::after {
+  	content: " ";
+  	position: absolute;
+  	top: 50%;
+  	right: 100%; /* To the left of the tooltip */
+  	margin-top: -5px;
+  	border-width: 5px;
+  	border-style: solid;
+  	border-color: transparent transparent transparent transparent;
+    transition: all .25s ease;
+}
+
+.tooltip:hover .tooltiptext {
+  	visibility: visible;
+}
+
+.tooltip p{
+	/* Highlight/Highlight Small Regular */
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	/* identical to box height, or 133% */
+	margin: 20px;
+	/* Midnight/Midnight 500 */
+	color: #ffff;
+}
+
+.tooltip img{
+	height: 28px;
+	padding-left: 5px;
+}
+.head_box_title .subtitle{
+	margin: 0px;
+	padding: 0px;
+	line-height: 22px;
+}
+
+/******************************************************************************************
+	CSS DIVs for organization
+********************************************************************************************/
+.main_container{
+	margin-top: 25px;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+.simple_container {  
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.simple_container .main_box { 
+	/*background: #F5F6FA;*/
+	border: 1.5px solid #00334F;
+
+}
+
+.simple_container .head_box {
+  	display: flex;
+  	height: 26px;
+}
+
+.head_box_title{
+}
+
+.head_box_tooltip{
+}
+
+/******************************************************************************************
+	CSS DIVs for organization
+********************************************************************************************/
+.report_subtitle,.report_title{
+	text-align: center;
+}
+
+.logo_title{
+	width: 100%;
+}
+.logo {
+	text-align: center;
+	width: 25%;
+}
+
+.logo img{
+	width:250px;
+}
+
+.head{
+	align-items: center;
+	margin-right: 5%;
+	margin-left: 5%;
+	display: flex;
+}
+
+.report_title .title{
+	margin: 0px;
+	padding-top: 18px;
+	line-height: 18px;
+}
+
+
+
+
