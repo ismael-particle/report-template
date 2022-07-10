@@ -156,16 +156,11 @@ p .details{
 /******************************************************************************************
 	CSS ToolTip
 ******************************************************************************************/
+/* ------------------------------------------------
+  [1] Base Styles
+-------------------------------------------------*/
 [aria-label][role~="tooltip"] {
-	/* Body/Body large regular */
-	font-family: 'Graphik';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-
-  	position: relative;
-  	padding: 0px;
+  position: relative;
 }
 
 [aria-label][role~="tooltip"]::before,
@@ -189,9 +184,12 @@ p .details{
 }
 
 [aria-label][role~="tooltip"]::after {
-  background: #00334F;
+  background: rgba(17, 17, 17, .9);
+  border-radius: 4px;
   color: #ffffff;
   content: attr(aria-label);
+  font-size: var(--microtip-font-size, 13px);
+  font-weight: var(--microtip-font-weight, normal);
   text-transform: var(--microtip-text-transform, none);
   padding: .5em 1em;
   white-space: nowrap;
@@ -205,6 +203,8 @@ p .details{
   opacity: 1;
   pointer-events: auto;
 }
+
+
 
 /* ------------------------------------------------
   [2] Position Modifiers
@@ -398,14 +398,13 @@ p .details{
 
 [role~="tooltip"][data-microtip-size="medium"]::after {
   white-space: initial;
-  width: 240px;
+  width: 150px;
 }
 
 [role~="tooltip"][data-microtip-size="large"]::after {
   white-space: initial;
-  width: 540px;
+  width: 260px;
 }
-
 
 /******************************************************************************************
 	CSS DIVs for organization
