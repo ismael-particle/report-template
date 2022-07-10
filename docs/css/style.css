@@ -160,7 +160,13 @@ p .details{
   [1] Base Styles
 -------------------------------------------------*/
 [aria-label][role~="tooltip"] {
-  position: relative;
+  	position: relative;
+  	/* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 [aria-label][role~="tooltip"]::before,
@@ -184,7 +190,7 @@ p .details{
 }
 
 [aria-label][role~="tooltip"]::after {
-  background: rgba(17, 17, 17, .9);
+  background: #00334F;
   border-radius: 4px;
   color: #ffffff;
   content: attr(aria-label);
@@ -393,17 +399,17 @@ p .details{
 -------------------------------------------------*/
 [role~="tooltip"][data-microtip-size="small"]::after {
   white-space: initial;
-  width: 80px;
+  width: 260px;
 }
 
 [role~="tooltip"][data-microtip-size="medium"]::after {
   white-space: initial;
-  width: 150px;
+  width: 520px;
 }
 
 [role~="tooltip"][data-microtip-size="large"]::after {
   white-space: initial;
-  width: 260px;
+  width: 780px;
 }
 
 /******************************************************************************************
