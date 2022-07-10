@@ -157,9 +157,7 @@ p .details{
 	CSS Support animation
 ******************************************************************************************/
 .tooltip {
-  	position: relative;
-  	display: inline-block;
-  	border-bottom: 1px  black; /* If you want dots under the hoverable text */
+
 }
 
 .tooltip .tooltiptext {
@@ -177,7 +175,6 @@ p .details{
 
 .tooltip .tooltiptext::after {
   	content: " ";
-  	position: absolute;
   	top: 50%;
   	right: 100%; /* To the left of the tooltip */
   	margin-top: -5px;
@@ -205,6 +202,7 @@ p .details{
 }
 
 .tooltip img{
+	position: relative;
 	height: 28px;
 	padding-left: 5px;
 }
@@ -222,6 +220,7 @@ p .details{
 	margin-right: 5%;
 	margin-left: 5%;
 	margin-bottom: 5%;
+
 }
 
 .simple_container {  
@@ -232,12 +231,12 @@ p .details{
 .simple_container .main_box { 
 	/*background: #F5F6FA;*/
 	border: 1.5px solid #00334F;
-
 }
 
 .simple_container .head_box {
   	display: flex;
   	height: 26px;
+
 }
 
 .head_box_title{
