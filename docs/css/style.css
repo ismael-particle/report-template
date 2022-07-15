@@ -460,31 +460,40 @@ p .details{
 /******************************************************************************************
 	CSS DIVs for organization
 ********************************************************************************************/
-.report_subtitle,.report_title{
-	text-align: center;
+.report_subtitle{
+	text-align: left;
+	
+	/* Highlight/Highlight Small Regular */
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
 }
 
 .logo_title{
 	width: 100%;
 }
 .logo {
-	text-align: center;
-	width: 25%;
+	text-align: left;
+	width: 15%;
 }
 
 .logo img{
-	width:250px;
+	width:120px;
 }
 
 .head{
-	align-items: center;
+	align-items: left;
 	margin-right: 5%;
 	margin-left: 5%;
-	display: flex;
 }
 
 .report_title .title{
+	text-align: left;
 	margin: 0px;
 	padding-top: 18px;
-	line-height: 18px;
+	line-height: 32px;
 }
