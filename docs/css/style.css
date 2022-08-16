@@ -431,7 +431,8 @@ p .details{
 }
 
 .container_head{
-  	display: flex;
+  display: flex;
+	margin-bottom: 10px;
 }
 
 .container_head_title{
