@@ -160,13 +160,14 @@ p .details{
   [1] Base Styles
 -------------------------------------------------*/
 [aria-label][role~="tooltip"] {
-  	position: relative;
-  	/* Body/Body large regular */
+  position: relative;
+  /* Body/Body large regular */
 	font-family: 'Graphik';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
+	text-align: left;
 }
 
 [aria-label][role~="tooltip"]::before,
@@ -460,7 +461,7 @@ p .details{
 }
 
 .container_doc {
-		text-align: right;
+	text-align: right;
 }
 
 
