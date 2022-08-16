@@ -24,9 +24,11 @@ body{
 h1,h2,h3,h4,h5,p,a{
 	font-family: 'Graphik';
 	font-style: normal;
+
+	color: #00334F;
 }
 
-p{
+p, a{
 	/* Body/Body large regular */
 	font-family: 'Graphik';
 	font-style: normal;
@@ -56,14 +58,12 @@ p .details{
 	font-style: normal;
 	font-weight: 600;
 	font-size: 30px;
-	line-height: 48px;
 
 	/* identical to box height, or 160% */
 	text-align: center;
 
 	/* Midnight/Midnight 500 */
 	color: #00334F;
-	margin: 6px;
 }
 
 .subtitle{
@@ -415,6 +415,57 @@ p .details{
 /******************************************************************************************
 	CSS DIVs for organization
 ********************************************************************************************/
+/* This contain similar information in a graphic box*/
+.topic_box {   
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border: 1.5px solid #00334F;
+	padding: 20px;
+	padding-top: 15px;
+}
+
+
+.simple_container{
+  	/*display: flex;*/
+}
+
+.container_head{
+  	display: flex;
+}
+
+.container_head_title{
+	padding: 0px;
+}
+
+.container_head_tooltip{
+	padding: 0px;
+}
+
+.container_head_tooltip img{
+	height:	32px;
+	margin:	0px;
+	padding: 0px;
+	padding-top: 6px;
+}
+
+.container_head_tooltip button{
+	background: none;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+.container_content{
+
+}
+
+.container_doc {
+		text-align: right;
+}
+
+
+
+/* This cotain all the contain in the page */
 .main_container{
 	margin-top: 25px;
 	margin-right: 5%;
@@ -422,44 +473,7 @@ p .details{
 	margin-bottom: 5%;
 }
 
-.simple_container {  
-	margin-top: 20px;
-	margin-bottom: 50px;
-}
 
-.simple_container .main_box { 
-	/*background: #F5F6FA;*/
-	border: 1.5px solid #00334F;
-}
-
-.simple_container .head_box {
-  	display: flex;
-  	height: 36px;
-}
-
-.head_box_title{
-}
-
-.head_box_tooltip{
-	padding-top: 6px;
-}
-
-.head_box_tooltip img{
-	height:	32px;
-	margin:	0px;
-	padding: 0px;
-}
-
-.head_box_tooltip button{
-	background: none;
-	padding: 0px;
-	margin: 0px;
-	border: none;
-}
-
-/******************************************************************************************
-	CSS DIVs for organization
-********************************************************************************************/
 .report_subtitle{
 	text-align: left;
 	
@@ -473,27 +487,28 @@ p .details{
 	color: #00334F;
 }
 
+.report_title .title{
+	text-align: left;
+	margin: 0px;
+	padding-top: 18px;
+	line-height: 32px;
+}
+
 .logo_title{
 	width: 100%;
 }
+
 .logo {
 	text-align: left;
 	width: 15%;
 }
 
 .logo img{
-	width:120px;
+	width:160px;
 }
 
 .head{
 	align-items: left;
 	margin-right: 5%;
 	margin-left: 5%;
-}
-
-.report_title .title{
-	text-align: left;
-	margin: 0px;
-	padding-top: 18px;
-	line-height: 32px;
 }
