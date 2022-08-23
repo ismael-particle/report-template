@@ -56,7 +56,7 @@ p .details{
 	/* Headings/Heading 2XLarge Emphasis */
 	font-family: 'Graphik';
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 30px;
 
 	/* identical to box height, or 160% */
@@ -70,7 +70,7 @@ p .details{
 	/* Headings/Heading XLarge Emphasis */
 	font-family: 'Graphik';
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 24px;
 	line-height: 40px;
 
@@ -439,9 +439,10 @@ p .details{
 	padding: 0px;
 }
 
-.container_head_tooltip{
+.container_head_tooltip,.container_head_download,.container_head_docs {
 	padding: 0px;
 }
+
 
 .container_head_tooltip img{
 	height:	32px;
@@ -450,7 +451,22 @@ p .details{
 	padding-top: 6px;
 }
 
-.container_head_tooltip button{
+
+.container_head_download img{
+	height:	30px;
+	margin:	0px;
+	padding: 0px;
+	padding-top: 6px;
+}
+
+.container_head_docs img{
+	height:	30px;
+	margin:	0px;
+	padding: 0px;
+	padding-top: 6px;
+}
+
+.container_head_tooltip button,.container_head_download button{
 	background: none;
 	padding: 0px;
 	margin: 0px;
