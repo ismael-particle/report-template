@@ -30,8 +30,10 @@
 }	
 
 body{
-	background:##FFFFFF;
+	background:#FFFFFF;
+	background-color:#FFFFFF;
 	margin-top: 15px;
+	color:#FFFFFF;
 }
 
 /******************************************************************************************
