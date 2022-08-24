@@ -413,7 +413,7 @@ p .details{
 -------------------------------------------------*/
 [role~="tooltip"][data-microtip-size="small"]::after {
   white-space: initial;
-  width: 260px;
+  width: 150px;
 }
 
 [role~="tooltip"][data-microtip-size="medium"]::after {
