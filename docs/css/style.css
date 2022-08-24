@@ -1,3 +1,16 @@
+/******************************************************************************************
+	CSS Table
+******************************************************************************************/
+.table_details th { 
+  border: 1px solid #00334F;
+  line-height: 0px;
+  padding: 12px;
+  margin: 0px;
+}
+.table_details th:first-child,.table_details th:nth-last-child(2){
+  background-color:#E2E4EB;
+}
+
 *{
 	padding: 0px;
 	margin: 0px;
