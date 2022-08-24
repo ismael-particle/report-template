@@ -2,13 +2,26 @@
 	CSS Table
 ******************************************************************************************/
 .table_details th { 
-  border: 1px solid #00334F;
+	border: 1px solid #00334F;
   line-height: 0px;
-  padding: 12px;
-  margin: 0px;
+  padding: 6px;
+  padding-top: 18px;
+  margin-top: 6px;
 }
 .table_details th:first-child,.table_details th:nth-last-child(2){
   background-color:#E2E4EB;
+}
+
+.table_details p {
+	/* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
 }
 
 *{
