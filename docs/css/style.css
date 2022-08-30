@@ -30,10 +30,10 @@
 }	
 
 body{
-	/*background:#FFFFFF;*/
-	/*background-color:#FFFFFF;*/
+	background:#FFFFFF;
+	background-color:#FFFFFF;
 	margin-top: 15px;
-	/*color:#FFFFFF;*/
+	color:#FFFFFF;
 }
 
 /******************************************************************************************
@@ -426,19 +426,34 @@ p .details{
 /* ------------------------------------------------
   [3] Size
 -------------------------------------------------*/
+[role~="tooltip"][data-microtip-size="documentation"]::after {
+  white-space: initial;
+  width: 97px;
+}
+
+[role~="tooltip"][data-microtip-size="csv-file"]::after {
+  white-space: initial;
+  width: 97px;
+}
+
 [role~="tooltip"][data-microtip-size="small"]::after {
   white-space: initial;
-  width: 150px;
+  width: 180px;
 }
 
 [role~="tooltip"][data-microtip-size="medium"]::after {
   white-space: initial;
-  width: 520px;
+  width: 360px;
 }
 
 [role~="tooltip"][data-microtip-size="large"]::after {
   white-space: initial;
-  width: 780px;
+  width: 540px;
+}
+
+[role~="tooltip"][data-microtip-size="extra-large"]::after {
+  white-space: initial;
+  width: 720px;
 }
 
 /******************************************************************************************
@@ -461,16 +476,36 @@ p .details{
 .container_head{
   display: flex;
 	margin-bottom: 10px;
+	width: 100%;
 }
 
 .container_head_title{
+	min-width: fit-content;
 	padding: 0px;
 }
 
-.container_head_tooltip,.container_head_download,.container_head_docs {
+.container_head_tooltip{
+	width:	42px;
 	padding: 0px;
+	justify-content: left;
+}
+.container_head_separator{
+	width: 100%;
+	white-space: normal;
 }
 
+.container_head_download{
+	width:	44px;
+	padding: 0px;
+	justify-content: right;
+}
+
+.container_head_docs {
+	float:right;
+	width:	42px;
+	padding: 0px;
+	justify-content: right;
+}
 
 .container_head_tooltip img{
 	height:	32px;
@@ -479,16 +514,15 @@ p .details{
 	padding-top: 6px;
 }
 
-
 .container_head_download img{
-	height:	32px;
+	width:	44px;
 	margin:	0px;
 	padding: 0px;
 	padding-top: 6px;
 }
 
 .container_head_docs img{
-	height:	32px;
+	width:	42px;
 	margin:	0px;
 	padding: 0px;
 	padding-top: 6px;
@@ -502,13 +536,14 @@ p .details{
 }
 
 .container_content{
-
+	margin-bottom: 25px;
 }
 
-.container_doc {
-	text-align: right;
+.container_content_python_chart{
+	max-width: 1200px; 
+	margin-right: auto;
+	margin-left: auto;
 }
-
 
 
 /* This cotain all the contain in the page */
