@@ -1,3 +1,12 @@
+function plotty_chart(data_array){
+    this.x_data = new Array();
+    this.y_data = new Array();
+    this.color = new Array();
+    this.chart = new Array();
+    this.data = data_array
+    this.layout = new Array();
+}
+
 /**********************************************************
     Creat CSV file
 ************************************************************/
@@ -43,6 +52,11 @@ const icon_dowload = "https://ismael-particle.github.io/report-template/img/down
 const icon_docs = "https://ismael-particle.github.io/report-template/img/docs.png";
 const icon_support = "https://ismael-particle.github.io/report-template/img/support.png";
 
+const color_red     = "#F45151";
+const color_orange  = "#FF993D";
+const color_yellow  = "#FAD51D";
+const color_green   = "#3AD599";
+
 /**********************************************************
     Building sections
 ************************************************************/
@@ -77,8 +91,7 @@ function creat_section(data_id,colection_data,html_element){
     		html_section_content = "<div id='" + content["content_id"] + "'></div>";
     		break;
   		case "simple-chart":
-    		html_section_content = "<div class='container_content_python_chart'>";
-    		html_section_content += "<mode-python id='" + content["content_id"] + "' options='python_options'></mode-python></div>";
+    		html_section_content = "<div id='" + content["content_id"] + "'></div>";
    	 		break;
   		default:
     		html_section_content = "<p> This is not a valid section type</p>";
@@ -119,8 +132,3 @@ function creat_section(data_id,colection_data,html_element){
     }
 
 }
-
-
-
-
-
