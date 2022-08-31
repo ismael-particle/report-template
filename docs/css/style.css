@@ -554,6 +554,10 @@ p .details{
 	margin-bottom: 5%;
 }
 
+.chart_ploty{
+	width: 100%;
+	max-width: 1400px;
+}
 
 .report_subtitle{
 	text-align: left;
