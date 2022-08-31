@@ -93,7 +93,7 @@ function creat_section(data_id,colection_data,html_element){
     		html_section_content = "<div id='" + content["content_id"] + "'></div>";
     		break;
   		case "simple-chart":
-    		html_section_content = "<div id='" + content["content_id"] + "'></div>";
+    		html_section_content = "<div class='chart_ploty' id='" + content["content_id"] + "'></div>";
    	 		break;
   		default:
     		html_section_content = "<p> This is not a valid section type</p>";
