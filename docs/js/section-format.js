@@ -1,12 +1,3 @@
-function plotty_chart(data_array){
-    this.x_data = new Array();
-    this.y_data = new Array();
-    this.color = new Array();
-    this.chart = new Array();
-    this.data = data_array
-    this.layout = new Array();
-}
-
 /**********************************************************
     Creat CSV file
 ************************************************************/
@@ -51,11 +42,6 @@ function creat_table (table_parameters,html_id){
 const icon_dowload = "https://ismael-particle.github.io/report-template/img/download.png"; 
 const icon_docs = "https://ismael-particle.github.io/report-template/img/docs.png";
 const icon_support = "https://ismael-particle.github.io/report-template/img/support.png";
-
-const color_red     = "#F45151";
-const color_orange  = "#FF993D";
-const color_yellow  = "#FAD51D";
-const color_green   = "#3AD599";
 
 /**********************************************************
     Building sections
