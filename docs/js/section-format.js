@@ -23,6 +23,32 @@ function plotty_chart(data_array){
     this.layout = new Array();
 }
 
+const creat_chart_bar_groups = (arr, {x,y,name,type,orientation,color_groups}) => arr.reduce ((acc,curr) => {
+    const indexOfCurr = acc.findIndex((item) => item.name === curr[name]);
+  
+    if(indexOfCurr !== -1 ){
+        acc[indexOfCurr].x.push(curr[x]);
+        acc[indexOfCurr].y.push(curr[y]);
+        return acc;
+    }
+    var warning_color = color_red;
+    
+    switch(curr[color_groups]){
+        case 'WARNING-0': warning_color = color_green;  break;
+        case 'WARNING-1': warning_color = color_yellow; break;
+        case 'WARNING-2': warning_color = color_orange; break;
+        case 'WARNING-3': warning_color = color_red;    break;
+    }
+    
+    return [...acc, {
+        x: [curr[x]], 
+        y: [curr[y]],
+        name: curr[name], 
+        type: type,
+        marker: {color:warning_color }
+        }]
+},[]);
+
 /**********************************************************
     Creat CSV file
 ************************************************************/
@@ -62,7 +88,6 @@ function creat_table (table_parameters,html_id){
 /**********************************************************
     Building sections
 ************************************************************/
-
 function creat_section(data_id,colection_data,html_element){
 
 	//Content array
@@ -93,6 +118,7 @@ function creat_section(data_id,colection_data,html_element){
     		html_section_content = "<div id='" + content["content_id"] + "'></div>";
     		break;
   		case "simple-chart":
+        case "simple-chart-bar-groups":
     		html_section_content = "<div class='container_content_python_chart' id='" + content["content_id"] + "'></div>";
    	 		break;
   		default:
@@ -133,4 +159,26 @@ function creat_section(data_id,colection_data,html_element){
         creat_csv(table_created, content["section_id"]);
     }
 
+    //Creating charts content["chart_settings"]
+    switch(content["content_type"]){
+        case "simple-chart-bar-groups":
+            var chart_bar = creat_chart_bar_groups(content["chart_settings"]["chart_data"], {
+                                x: content["chart_settings"]["x_column"],
+                                y: content["chart_settings"]["y_column"],
+                                name: content["chart_settings"]["group"],
+                                type: 'bar',
+                                orientation: content["chart_settings"]["orientation"],
+                                color_groups: content["chart_settings"]["colors"]
+                                });
+            var layout = {
+                xaxis: {title: content["chart_settings"]["x_label"]},
+                yaxis: {title: content["chart_settings"]["y_label"]},
+                barmode: 'stack'
+                };
+
+            Plotly.newPlot( content["content_id"], chart_bar, layout, {responsive: true} );
+            break;
+    }
+
 }
+
