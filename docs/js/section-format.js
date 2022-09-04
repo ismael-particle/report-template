@@ -34,10 +34,10 @@ const creat_chart_bar_groups = (arr, {x,y,name,type,orientation,color_groups}) =
     var warning_color = color_red;
     
     switch(curr[color_groups]){
-        case 'WARNING-0': warning_color = color_green;  break;
-        case 'WARNING-1': warning_color = color_yellow; break;
-        case 'WARNING-2': warning_color = color_orange; break;
-        case 'WARNING-3': warning_color = color_red;    break;
+        case '0': warning_color = color_green;  break;
+        case '1': warning_color = color_yellow; break;
+        case '2': warning_color = color_orange; break;
+        case '3': warning_color = color_red;    break;
     }
     
     return [...acc, {
