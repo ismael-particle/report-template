@@ -540,7 +540,6 @@ p .details{
 }
 
 .container_content_python_chart{
-	max-width: 1200px; 
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -555,8 +554,9 @@ p .details{
 }
 
 .chart_ploty{
-	width: 100%;
-	max-width: 1400px;
+	max-width: 1600px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .report_subtitle{
