@@ -10,6 +10,7 @@ const color_red     = "#F45151";
 const color_orange  = "#FF993D";
 const color_yellow  = "#FAD51D";
 const color_green   = "#3AD599";
+const color_blue    = "#00E1FF";
 
 /**********************************************************
     Building charts
@@ -49,6 +50,33 @@ const creat_chart_bar_groups = (arr, {x,y,name,type,orientation,color_groups}) =
         orientation: orientation
         }]
 },[]);
+
+function creat_chart_bar (arr, {x,y,type,orientation,color_groups}){
+    var x_data = new Array();    
+    var y_data = new Array();    
+    var color = new Array();
+    
+    arr.forEach(function(item,index, array){ 
+        x_data.push(item[x]);
+        y_data.push(item[y]);
+        switch(item[color_groups]){
+            case '0': color.push(color_green);  break;
+            case '1': color.push(color_yellow); break;
+            case '2': color.push(color_orange); break;
+            case '3': color.push(color_red);    break;
+            case 'NULL': color.push(color_blue);    break;
+            default: color.push(color_blue);    break;
+        }
+    });
+    console.log(color);
+    return [ {
+        x: x_data, 
+        y: y_data,
+        type: type,
+        marker: { color },
+        orientation: orientation
+    }]
+} 
 
 /**********************************************************
     Creat CSV file
@@ -177,7 +205,23 @@ function creat_section(data_id,colection_data,html_element){
                 barmode: 'stack'
                 };
 
-            Plotly.newPlot( content["content_id"], chart_bar, layout, {responsive: true} );
+            Plotly.newPlot( content["content_id"], chart_bar, layout, {responsive: true, displaylogo: false} );
+            break;
+        case "simple-chart-bar":
+            var chart_bar = creat_chart_bar(content["chart_settings"]["chart_data"], {
+                x: content["chart_settings"]["x_column"],
+                y: content["chart_settings"]["y_column"],
+                type: 'bar',
+                orientation: content["chart_settings"]["orientation"],
+                color_groups:content["chart_settings"]["colors"] });
+
+            var layout = {
+                xaxis: {title: content["chart_settings"]["x_label"]},
+                yaxis: {title: content["chart_settings"]["y_label"]}
+                }; 
+            
+            Plotly.newPlot( content["content_id"], chart_bar, layout, {responsive: true, displaylogo: false} );
+            
             break;
     }
 
