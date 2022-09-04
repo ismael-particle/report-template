@@ -148,6 +148,7 @@ function creat_section(data_id,colection_data,html_element){
     		break;
   		case "simple-chart":
         case "simple-chart-bar-groups":
+        case "simple-chart-bar":
     		html_section_content = "<div class='container_content_python_chart' id='" + content["content_id"] + "'></div>";
    	 		break;
   		default:
