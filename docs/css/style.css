@@ -554,8 +554,8 @@ p .details{
 }
 
 .chart_ploty{
-	margin-right: auto;
-	margin-left: auto;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .report_subtitle{
