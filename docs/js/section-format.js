@@ -199,8 +199,9 @@ function creat_section(data_id,colection_data,html_element){
                                 color_groups: content["chart_settings"]["colors"]
                                 });
             var layout = {
-                xaxis: {title: content["chart_settings"]["x_label"]},
-                yaxis: {title: content["chart_settings"]["y_label"]},
+                xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
+                yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
+                font: {family:'MD IO 0.4', size: 12, color: '#00334F'},
                 barmode: 'stack'
                 };
 
@@ -215,16 +216,9 @@ function creat_section(data_id,colection_data,html_element){
                 color_groups:content["chart_settings"]["colors"] });
 
             var layout = {
-                xaxis: {title: content["chart_settings"]["x_label"]},
-                yaxis: {title: content["chart_settings"]["y_label"]},
-                font: {
-                    family:'MD IO 0.4',
-                    size: 12,
-                    color: '#00334F'
-                    },
-                margin:{
-                    autoexpand: true
-                    }
+                xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
+                yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
+                font: {family:'MD IO 0.4', size: 12, color: '#00334F'}
                 }; 
             
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
