@@ -15,13 +15,11 @@ const color_blue    = "#00E1FF";
 /**********************************************************
     Building charts
 ************************************************************/
-function plotty_chart(data_array){
-    this.x_data = new Array();
-    this.y_data = new Array();
-    this.color = new Array();
-    this.chart = new Array();
-    this.data = data_array
-    this.layout = new Array();
+function generate_id(text,type){
+    switch(type){
+        case 'chart':   return ( "chart_".concat(text.slice(4,text.length)) );    break;
+        case 'tab':     return ( "tab_".concat(text.slice(4,text.length)) );      break;
+    }
 }
 
 const creat_chart_bar_groups = (arr, {x,y,name,type,orientation,color_groups}) => arr.reduce ((acc,curr) => {
