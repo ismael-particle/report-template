@@ -142,12 +142,12 @@ function creat_section(data_id,colection_data,html_element){
 
 	switch (content["content_type"]) {
   		case "simple-table":
-    		html_section_content = "<div id='" + content["content_id"] + "'></div>";
+    		html_section_content = "<div id='" + generate_id(content["section_id"],"tab") + "'></div>";
     		break;
   		case "simple-chart":
         case "simple-chart-bar-groups":
         case "simple-chart-bar":
-    		html_section_content = "<div class='container_content_python_chart' id='" + content["content_id"] + "'></div>";
+    		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
   		default:
     		html_section_content = "<p> This is not a valid section type</p>";
@@ -183,7 +183,7 @@ function creat_section(data_id,colection_data,html_element){
     if ( content["table_settings"]["table_data"]!= null) {
         console.log( content["table_settings"]  );
 
-        var table_created = creat_table(content["table_settings"], content["content_id"]);
+        var table_created = creat_table(content["table_settings"], generate_id(content["section_id"],"tab"));
         creat_csv(table_created, content["section_id"]);
     }
 
@@ -219,7 +219,7 @@ function creat_section(data_id,colection_data,html_element){
                 yaxis: {title: content["chart_settings"]["y_label"]}
                 }; 
             
-            Plotly.newPlot( content["content_id"], chart_bar, layout, {responsive: true, displaylogo: false} );
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
             
             break;
     }
