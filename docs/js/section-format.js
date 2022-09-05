@@ -44,7 +44,7 @@ const creat_chart_bar_groups = (arr, {x,y,name,type,orientation,color_groups}) =
         y: [curr[y]],
         name: curr[name], 
         type: type,
-        marker: { color:warning_color },
+        marker: { color:warning_color, line:{width:0.5} },
         orientation: orientation
         }]
 },[]);
@@ -71,7 +71,7 @@ function creat_chart_bar (arr, {x,y,type,orientation,color_groups}){
         x: x_data, 
         y: y_data,
         type: type,
-        marker: { color },
+        marker: { color ,line:{width:0.5}},
         orientation: orientation
     }]
 } 
