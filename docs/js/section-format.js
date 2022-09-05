@@ -216,7 +216,15 @@ function creat_section(data_id,colection_data,html_element){
 
             var layout = {
                 xaxis: {title: content["chart_settings"]["x_label"]},
-                yaxis: {title: content["chart_settings"]["y_label"]}
+                yaxis: {title: content["chart_settings"]["y_label"]},
+                font: {
+                    family:'MD IO 0.4',
+                    size: 12,
+                    color: '#00334F'
+                    },
+                margin:{
+                    autoexpand: true
+                    }
                 }; 
             
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
