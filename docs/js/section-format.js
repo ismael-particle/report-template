@@ -204,7 +204,7 @@ function creat_section(data_id,colection_data,html_element){
                 barmode: 'stack'
                 };
 
-            Plotly.newPlot( content["content_id"], chart_bar, layout, {responsive: true, displaylogo: false} );
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
             break;
         case "simple-chart-bar":
             var chart_bar = creat_chart_bar(content["chart_settings"]["chart_data"], {
