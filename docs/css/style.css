@@ -536,6 +536,7 @@ p .details{
 }
 
 .container_content{
+	max-width: 80vw;
 	margin-bottom: 25px;
 }
 
