@@ -271,4 +271,3 @@ function creat_section(data_id,colection_data,html_element){
     }
 
 }
-
