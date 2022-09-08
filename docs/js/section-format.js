@@ -171,6 +171,7 @@ function creat_section(data_id,colection_data,html_element){
   		case "simple-chart":
         case "simple-chart-bar-groups":
         case "simple-chart-bar":
+        case "simple-char-histogram-mono-color":
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
   		default:
@@ -231,6 +232,7 @@ function creat_section(data_id,colection_data,html_element){
 
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
             break;
+
         case "simple-chart-bar":
             var chart_bar = creat_chart_bar(content["chart_settings"]["chart_data"], {
                 x: content["chart_settings"]["x_column"],
@@ -248,6 +250,7 @@ function creat_section(data_id,colection_data,html_element){
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
             
             break;
+
         case "simple-char-histogram-mono-color":
             var chart_histogram = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
                 x: content["chart_settings"]["x_column"],
