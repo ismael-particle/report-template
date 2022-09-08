@@ -49,6 +49,31 @@ const creat_chart_bar_groups = (arr, {x,y,name,type,orientation,color_groups}) =
         }]
 },[]);
 
+
+function creat_histogram_mono_color ( arr, {x, histogram_size, chart_color}){
+    var x_data = new Array();    
+    
+    arr.forEach(function(item,index, array){ 
+        x_data.push(item[x]);
+    });
+
+    var max_limit = Math.ceil( Math.max(x_data) );
+    var min_limit = Math.floor( Math.min(x_data) );
+
+    return [ {
+        x: x_data, 
+        type: 'histogram',
+        marker: { color:chart_color ,line:{width:0.5}},
+        xbins: { 
+            end: max_limit, 
+            size: histogram_size, 
+            start: min_limit
+        }
+    }]
+}
+
+
+
 function creat_chart_bar (arr, {x,y,type,orientation,color_groups}){
     var x_data = new Array();    
     var y_data = new Array();    
@@ -66,7 +91,6 @@ function creat_chart_bar (arr, {x,y,type,orientation,color_groups}){
             default: color.push(color_blue);    break;
         }
     });
-    console.log(color);
     return [ {
         x: x_data, 
         y: y_data,
@@ -201,7 +225,7 @@ function creat_section(data_id,colection_data,html_element){
             var layout = {
                 xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
                 yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
-                font: {family:'MD IO 0.4', size: 12, color: '#00334F'},
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'},
                 barmode: 'stack'
                 };
 
@@ -218,11 +242,26 @@ function creat_section(data_id,colection_data,html_element){
             var layout = {
                 xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
                 yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
-                font: {family:'MD IO 0.4', size: 12, color: '#00334F'}
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
                 }; 
             
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
             
+            break;
+        case "simple-char-histogram-mono-color":
+            var chart_histogram = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
+                x: content["chart_settings"]["x_column"],
+                chart_color: color_blue,
+                histogram_size: content["chart_settings"]["histogram_width"]
+            });
+
+            var layout = {
+                xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
+                yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
+            };    
+
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram, layout, {responsive: true, displaylogo: false} );         
             break;
     }
 
