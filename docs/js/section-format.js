@@ -69,7 +69,7 @@ function creat_histogram_mono_color ( arr, {x, histogram_size, chart_color}){
             size: histogram_size, 
             start: min_limit
         },
-        text: yValue.map(String),
+        text: xValue.map(String),
         textposition: 'auto'
     }]
 }
@@ -271,3 +271,4 @@ function creat_section(data_id,colection_data,html_element){
     }
 
 }
+
