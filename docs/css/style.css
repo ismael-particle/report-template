@@ -536,11 +536,14 @@ p .details{
 }
 
 .container_content{
-	max-width: 80vw;
 	margin-bottom: 25px;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
 }
 
 .container_content_python_chart{
+	max-width: 80vw;
 	margin-right: auto;
 	margin-left: auto;
 }
