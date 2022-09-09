@@ -102,6 +102,33 @@ function creat_chart_bar (arr, {x,y,type,orientation,color_groups}){
     }]
 } 
 
+
+function creat_chart_pie (arr, {value_column,  label_colum, color_groups} ){
+    var values_data = new Array();    
+    var labels_data = new Array();    
+    var color_data = new Array();
+    
+    arr.forEach(function(item,index, array){ 
+        values_data.push(item[value_column]);
+        labels_data.push(item[label_colum]);
+        switch(item[color_groups]){
+            case '0': color_data.push(color_green);  break;
+            case '1': color_data.push(color_yellow); break;
+            case '2': color_data.push(color_orange); break;
+            case '3': color_data.push(color_red);    break;
+            case 'NULL': color_data.push(color_blue);    break;
+            default: color_data.push(color_blue);    break;
+        }
+    });
+
+    return [ {
+        values: values_data, 
+        labels: labels_data,
+        type: 'pie',
+        marker: { color:color_data ,line:{width:0.5}}
+    }]
+} 
+
 /**********************************************************
     Creat CSV file
 ************************************************************/
@@ -173,7 +200,8 @@ function creat_section(data_id,colection_data,html_element){
   		case "simple-chart":
         case "simple-chart-bar-groups":
         case "simple-chart-bar":
-        case "simple-char-histogram-mono-color":
+        case "simple-chart-histogram-mono-color":
+        case "simple-chart-pie":
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
   		default:
@@ -217,7 +245,7 @@ function creat_section(data_id,colection_data,html_element){
     //Creating charts content["chart_settings"]
     switch(content["content_type"]){
         case "simple-chart-bar-groups":
-            var chart_bar = creat_chart_bar_groups(content["chart_settings"]["chart_data"], {
+            var chart_bar_data = creat_chart_bar_groups(content["chart_settings"]["chart_data"], {
                                 x: content["chart_settings"]["x_column"],
                                 y: content["chart_settings"]["y_column"],
                                 name: content["chart_settings"]["group"],
@@ -232,11 +260,11 @@ function creat_section(data_id,colection_data,html_element){
                 barmode: 'stack'
                 };
 
-            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar_data, layout, {responsive: true, displaylogo: false} );
             break;
 
         case "simple-chart-bar":
-            var chart_bar = creat_chart_bar(content["chart_settings"]["chart_data"], {
+            var chart_bar_data = creat_chart_bar(content["chart_settings"]["chart_data"], {
                 x: content["chart_settings"]["x_column"],
                 y: content["chart_settings"]["y_column"],
                 type: 'bar',
@@ -249,12 +277,12 @@ function creat_section(data_id,colection_data,html_element){
                 font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
                 }; 
             
-            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar, layout, {responsive: true, displaylogo: false} );
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar_data, layout, {responsive: true, displaylogo: false} );
             
             break;
 
-        case "simple-char-histogram-mono-color":
-            var chart_histogram = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
+        case "simple-chart-histogram-mono-color":
+            var chart_histogram_data = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
                 x: content["chart_settings"]["x_column"],
                 chart_color: color_blue,
                 histogram_size: content["chart_settings"]["histogram_width"]
@@ -266,8 +294,23 @@ function creat_section(data_id,colection_data,html_element){
                 font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
             };    
 
-            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram, layout, {responsive: true, displaylogo: false} );         
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram_data, layout, {responsive: true, displaylogo: false} );         
             break;
+        case "simple-chart-pie":
+            var chart_pie_data = creat_chart_pie(content["chart_settings"]["chart_data"],{ 
+                value_column: content["chart_settings"]["x_column"],
+                label_colum: content["chart_settings"]["y_column"],
+                color_groups: content["chart_settings"]["colors"]
+            });
+            var layout = {
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
+            };    
+
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_pie_data, layout, {responsive: true, displaylogo: false} );         
+
+            break;
+
+
     }
 
 }
