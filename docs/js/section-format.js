@@ -68,9 +68,7 @@ function creat_histogram_mono_color ( arr, {x, histogram_size, chart_color}){
             end: max_limit, 
             size: histogram_size, 
             start: min_limit
-        },
-        text: xValue.map(String),
-        textposition: 'auto'
+        }
     }]
 }
 
