@@ -123,7 +123,7 @@ function creat_chart_pie (arr, {value_column,  label_colum, color_groups} ){
         values: values_data, 
         labels: labels_data,
         type: 'pie',
-        marker: { color:color_data ,line:{width:0.5}}
+        marker: { colors:color_data ,line:{width:0.5}}
     }]
 } 
 
