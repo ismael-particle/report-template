@@ -99,7 +99,7 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             xbins: { 
                 end: 0.00, 
                 size: histogram_size, 
-                start: -20
+                start: -21
                 },
             name: 'Good'
         },
@@ -110,7 +110,7 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             xbins: { 
                 end: 0.00, 
                 size: histogram_size, 
-                start: -20
+                start: -21
                 },
             name: 'Fair'
         },
@@ -121,7 +121,7 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             xbins: { 
                 end: 0.00, 
                 size: histogram_size, 
-                start: -20
+                start: -21
                 },
             name: 'Keep watch'
         },
@@ -132,7 +132,7 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             xbins: { 
                 end: 0.00, 
                 size: histogram_size, 
-                start: -20
+                start: -21
                 },
             name: 'Take action'       
         }
