@@ -378,6 +378,9 @@ function creat_section(data_id,colection_data,html_element){
                 font: {family:'MD IO 0.4', size: 13, color: '#00334F'},
                 barmode: "overlay"
             };    
+            
+            console.log(chart_histogram_data);
+            console.log(layout);
 
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram_data, layout, {responsive: true, displaylogo: false} );         
             break;
