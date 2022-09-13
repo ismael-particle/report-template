@@ -57,8 +57,8 @@ function creat_histogram_mono_color ( arr, {x, histogram_size, chart_color}){
         x_data.push(item[x]);
     });
 
-    var max_limit = Math.ceil( Math.max(x_data) );
-    var min_limit = Math.floor( Math.min(x_data) );
+  var min_limit = Math.floor( Math.min.apply(null,x_data) );
+  var max_limit = Math.ceil( Math.max.apply(null,x_data) );
 
     return [ {
         x: x_data, 
@@ -89,12 +89,11 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
         x_total.push(item[x]);
     });
 
-    var max_limit = Math.ceil( Math.max(x_total) );
-    var min_limit = Math.floor( Math.min(x_total) );
+    var min_limit = Math.floor( Math.min.apply(null,x_total) );
+    var max_limit = Math.ceil( Math.max.apply(null,x_total) );
 
-    console.log(x_total);
-    console.log( Math.max(x_total) );
-    console.log( Math.min(x_total) );
+    console.log( Math.max(min_limit) );
+    console.log( Math.min(max_limit) );
 
     var array_data = [
         {
@@ -102,9 +101,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_green ,line:{width:0.5}},
             xbins: { 
-                end: 0.00, 
+                end: max_limit, 
                 size: histogram_size, 
-                start: -21
+                start: min_limit
                 },
             name: 'Good'
         },
@@ -113,9 +112,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_yellow ,line:{width:0.5}},
             xbins: { 
-                end: 0.00, 
+                end: max_limit, 
                 size: histogram_size, 
-                start: -21
+                start: min_limit
                 },
             name: 'Fair'
         },
@@ -124,9 +123,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_orange ,line:{width:0.5}},
             xbins: { 
-                end: 0.00, 
+                end: max_limit, 
                 size: histogram_size, 
-                start: -21
+                start: min_limit
                 },
             name: 'Keep watch'
         },
@@ -135,9 +134,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_red ,line:{width:0.5}},
             xbins: { 
-                end: 0.00, 
+                end: max_limit, 
                 size: histogram_size, 
-                start: -21
+                start: min_limit
                 },
             name: 'Take action'       
         }
