@@ -88,8 +88,11 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
 
     });
 
-    var max_limit = Math.ceil( Math.max(arr[x]) );
-    var min_limit = Math.floor( Math.min(arr[x]) );
+    var max_limit = Math.ceil( Math.max(arr) );
+    var min_limit = Math.floor( Math.min(arr) );
+
+    console.log(max_limit);
+    console.log(min_limit);
 
     var array_data = [
         {
