@@ -363,7 +363,7 @@ function creat_section(data_id,colection_data,html_element){
 
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram_data, layout, {responsive: true, displaylogo: false} );         
             break;
-//( arr, {x, histogram_size, color_groups})
+
         case "simple-chart-histogram-multi-color":
 
             var chart_histogram_data = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
@@ -375,7 +375,8 @@ function creat_section(data_id,colection_data,html_element){
             var layout = {
                 xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
                 yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
-                font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'},
+                barmode: "overlay"
             };    
 
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram_data, layout, {responsive: true, displaylogo: false} );         
@@ -399,3 +400,4 @@ function creat_section(data_id,colection_data,html_element){
     }
 
 }
+
