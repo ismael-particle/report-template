@@ -417,10 +417,11 @@ function creat_section(data_id,colection_data,html_element){
 
             var layout = {
 
-                xaxis: {title: {text: content["chart_settings"]["histogram_x_label"],standoff:20}, automargin: true },
+                xaxis: {title: {text: content["chart_settings"]["histogram_x_label"],standoff:20}, automargin: true,  },
                 yaxis: {title: {text: content["chart_settings"]["histogram_y_label"],standoff:20}, automargin: true },
                 font: {family:'MD IO 0.4', size: 13, color: '#00334F'},
-                barmode: "overlay"
+                barmode: "overlay",
+                grid: {rows: 1, columns: 1, pattern: 'independent'}
 
             };    
 
