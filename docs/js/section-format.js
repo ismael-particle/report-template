@@ -369,7 +369,7 @@ function creat_section(data_id,colection_data,html_element){
 
         case "simple-chart-histogram-multi-color":
 
-            var chart_histogram_data = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
+            var chart_histogram_data = creat_histogram_multi_color(content["chart_settings"]["chart_data"],{
                 x: content["chart_settings"]["x_column"],
                 color_groups: content["chart_settings"]["groups"],
                 histogram_size: content["chart_settings"]["histogram_width"]
