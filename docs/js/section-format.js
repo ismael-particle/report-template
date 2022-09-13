@@ -97,9 +97,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_green ,line:{width:0.5}},
             xbins: { 
-                end: max_limit, 
+                end: 0.00, 
                 size: histogram_size, 
-                start: min_limit
+                start: -20
                 },
             name: 'Good'
         },
@@ -108,9 +108,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_yellow ,line:{width:0.5}},
             xbins: { 
-                end: max_limit, 
+                end: 0.00, 
                 size: histogram_size, 
-                start: min_limit
+                start: -20
                 },
             name: 'Fair'
         },
@@ -119,9 +119,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_orange ,line:{width:0.5}},
             xbins: { 
-                end: max_limit, 
+                end: 0.00, 
                 size: histogram_size, 
-                start: min_limit
+                start: -20
                 },
             name: 'Keep watch'
         },
@@ -130,9 +130,9 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             type: 'histogram',
             marker: { color:color_red ,line:{width:0.5}},
             xbins: { 
-                end: max_limit, 
+                end: 0.00, 
                 size: histogram_size, 
-                start: min_limit
+                start: -20
                 },
             name: 'Take action'       
         }
@@ -404,3 +404,4 @@ function creat_section(data_id,colection_data,html_element){
     }
 
 }
+
