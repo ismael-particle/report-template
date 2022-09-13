@@ -77,7 +77,8 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
     var x_data_color_1 = new Array();    
     var x_data_color_2 = new Array();    
     var x_data_color_3 = new Array();    
-    
+    var x_total = new Array();
+
     arr.forEach(function(item,index, array){ 
         switch(item[color_groups]){
             case '0': x_data_color_0.push(item[x]);  break;
@@ -85,13 +86,13 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
             case '2': x_data_color_2.push(item[x]);  break;
             case '3': x_data_color_3.push(item[x]);  break;
         }
-
+        x_total.push(item[x]);
     });
 
-    var max_limit = Math.ceil( Math.max(arr) );
-    var min_limit = Math.floor( Math.min(arr) );
+    var max_limit = Math.ceil( Math.max(x_total) );
+    var min_limit = Math.floor( Math.min(x_total) );
 
-    console.log(arr);
+    console.log(x_total);
     console.log(max_limit);
     console.log(min_limit);
 
