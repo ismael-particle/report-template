@@ -72,6 +72,74 @@ function creat_histogram_mono_color ( arr, {x, histogram_size, chart_color}){
     }]
 }
 
+function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
+    var x_data_color_0 = new Array();    
+    var x_data_color_1 = new Array();    
+    var x_data_color_2 = new Array();    
+    var x_data_color_3 = new Array();    
+    
+    arr.forEach(function(item,index, array){ 
+        switch(item[color_groups]){
+            case '0': x_data_color_0.push(item[x]);  break;
+            case '1': x_data_color_1.push(item[x]);  break;
+            case '2': x_data_color_2.push(item[x]);  break;
+            case '3': x_data_color_3.push(item[x]);  break;
+        }
+    });
+
+    var max_limit = Math.ceil( Math.max(x) );
+    var min_limit = Math.floor( Math.min(x) );
+
+    var array_data = [
+        {
+            x: x_data_color_0, 
+            type: 'histogram',
+            marker: { color:color_green ,line:{width:0.5}},
+            xbins: { 
+                end: max_limit, 
+                size: histogram_size, 
+                start: min_limit
+                },
+            name: 'Good'
+        },
+        {
+            x: x_data_color_1, 
+            type: 'histogram',
+            marker: { color:color_yellow ,line:{width:0.5}},
+            xbins: { 
+                end: max_limit, 
+                size: histogram_size, 
+                start: min_limit
+                },
+            name: 'Fair'
+        },
+        {
+            x: x_data_color_2, 
+            type: 'histogram',
+            marker: { color:color_orange ,line:{width:0.5}},
+            xbins: { 
+                end: max_limit, 
+                size: histogram_size, 
+                start: min_limit
+                },
+            name: 'Keep watch'
+        },
+        {
+            x: x_data_color_3, 
+            type: 'histogram',
+            marker: { color:color_red ,line:{width:0.5}},
+            xbins: { 
+                end: max_limit, 
+                size: histogram_size, 
+                start: min_limit
+                },
+            name: 'Take action'       
+        }
+    ]
+
+
+    return array_data;
+}
 
 
 function creat_chart_bar (arr, {x,y,type,orientation,color_groups}){
@@ -200,6 +268,7 @@ function creat_section(data_id,colection_data,html_element){
         case "simple-chart-bar":
         case "simple-chart-histogram-mono-color":
         case "simple-chart-pie":
+        case "simple-chart-histogram-multi-color":
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
   		default:
@@ -294,6 +363,24 @@ function creat_section(data_id,colection_data,html_element){
 
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram_data, layout, {responsive: true, displaylogo: false} );         
             break;
+//( arr, {x, histogram_size, color_groups})
+        case "simple-chart-histogram-multi-color":
+
+            var chart_histogram_data = creat_histogram_mono_color(content["chart_settings"]["chart_data"],{
+                x: content["chart_settings"]["x_column"],
+                color_groups: content["chart_settings"]["groups"],
+                histogram_size: content["chart_settings"]["histogram_width"]
+            });
+
+            var layout = {
+                xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
+                yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
+            };    
+
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_histogram_data, layout, {responsive: true, displaylogo: false} );         
+            break;
+
         case "simple-chart-pie":
             var chart_pie_data = creat_chart_pie(content["chart_settings"]["chart_data"],{ 
                 value_column: content["chart_settings"]["x_column"],
@@ -312,4 +399,3 @@ function creat_section(data_id,colection_data,html_element){
     }
 
 }
-
