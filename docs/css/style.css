@@ -540,7 +540,16 @@ p .details{
 	justify-content: center;
 	align-content: center;
 	text-align: center;
+  display: flex;
 }
+.container_content_65_size{
+	width: 65%;
+}
+
+.container_content_35_size{
+	width: 35%;
+}
+
 
 .container_content_python_chart{
 	max-width: 80vw;
