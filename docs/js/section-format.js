@@ -19,6 +19,9 @@ function generate_id(text,type){
     switch(type){
         case 'chart':   return ( "chart_".concat(text.slice(4,text.length)) );    break;
         case 'tab':     return ( "tab_".concat(text.slice(4,text.length)) );      break;
+        case 'chart_a':   return ( "chart_a_".concat(text.slice(4,text.length)) );    break;
+        case 'chart_b':   return ( "chart_b_".concat(text.slice(4,text.length)) );    break;
+
     }
 }
 
