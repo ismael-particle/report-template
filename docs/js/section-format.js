@@ -272,10 +272,10 @@ function creat_section(data_id,colection_data,html_element){
     		html_section_content = "<div id='" + generate_id(content["section_id"],"tab") + "'></div>";
     		break;
         case "double-chart-histogram-color-and-pie":
-            html_section_content = " <div class='container_content_65_size'>"
+            html_section_content = "<div class='container_content_double'><div class='container_content_65_size'>"
             html_section_content += "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart_a") + "'></div></div>";
             html_section_content += " <div class='container_content_35_size'>"
-            html_section_content += "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart_b") + "'></div></div>";
+            html_section_content += "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart_b") + "'></div></div></div>";
             break;
   		case "simple-chart":
         case "simple-chart-bar-groups":
