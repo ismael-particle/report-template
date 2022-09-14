@@ -540,8 +540,12 @@ p .details{
 	justify-content: center;
 	align-content: center;
 	text-align: center;
+}
+
+.container_content_double{
   display: flex;
 }
+
 .container_content_65_size{
 	width: 65%;
 }
