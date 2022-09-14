@@ -544,7 +544,9 @@ p .details{
 
 .container_content_double{
   display: flex;
-  max-width: 85vw;
+	max-width: 85vw;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .container_content_65_size{
