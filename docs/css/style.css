@@ -544,17 +544,15 @@ p .details{
 
 .container_content_double{
   display: flex;
-	max-width: 85vw;
-	margin-right: auto;
-	margin-left: auto;
+	max-width: 70vw;
 }
 
 .container_content_65_size{
-	max-width: 60vw;
+	width: 65%;
 }
 
 .container_content_35_size{
-	max-width: 30vw;
+	width: 35%;
 }
 
 
