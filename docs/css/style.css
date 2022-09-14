@@ -544,7 +544,10 @@ p .details{
 
 .container_content_double{
   display: flex;
-	max-width: 70vw;
+	max-width: 90vw;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
 }
 
 .container_content_65_size{
