@@ -544,20 +544,23 @@ p .details{
 
 .container_content_double{
   display: flex;
-  width: 100%;
 }
-
-.container_content_65_size{
-	width: 65%;
-}
-
-.container_content_35_size{
-	width: 35%;
-}
-
 
 .container_content_python_chart{
 	max-width: 85vw;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container_content_python_chart_a{
+	max-width: 55vw;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.container_content_python_chart_b{
+	max-width: 30vw;
 	margin-right: auto;
 	margin-left: auto;
 }
