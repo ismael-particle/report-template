@@ -281,6 +281,7 @@ function creat_section(data_id,colection_data,html_element){
         case "simple-chart-histogram-mono-color":
         case "simple-chart-pie":
         case "simple-chart-histogram-multi-color":
+        case "simple-chart-bar-and-horizontal-line":
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
   		default:
@@ -353,6 +354,46 @@ function creat_section(data_id,colection_data,html_element){
                 yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
                 font: {family:'MD IO 0.4', size: 13, color: '#00334F'}
                 }; 
+            
+            Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar_data, layout, {responsive: true, displaylogo: false} );
+            
+            break;
+
+        case "simple-chart-bar-and-horizontal-line":
+            var chart_bar_data = creat_chart_bar(content["chart_settings"]["chart_data"], {
+                x: content["chart_settings"]["x_column"],
+                y: content["chart_settings"]["y_column"],
+                type: 'bar',
+                orientation: content["chart_settings"]["orientation"],
+                color_groups:content["chart_settings"]["colors"] });
+
+            var line_limit = content["chart_settings"]["chart_data"][0][content["chart_settings"]["line_value"]];
+            var min_value = 0;
+            var max_value = chart_bar_data[0]['x'].length;
+
+            console.log( line_limit );
+            console.log( min_value );
+            console.log( max_value );
+
+            var layout = {
+                xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
+                yaxis: {title: {text: content["chart_settings"]["y_label"],standoff:20}, automargin: true },
+                font: {family:'MD IO 0.4', size: 13, color: '#00334F'},
+                shapes: [
+                    {
+                        type: 'line',
+                        x0: -1,
+                        y0: line_limit,
+                        x1: max_value,
+                        y1: line_limit,   
+                        line: {
+                            color: color_red,
+                            width: 4,
+                            dash: 'dashdot'
+                        }
+                    }
+                ]
+            }; 
             
             Plotly.newPlot( generate_id(content["section_id"],"chart"), chart_bar_data, layout, {responsive: true, displaylogo: false} );
             
