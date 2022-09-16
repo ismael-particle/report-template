@@ -265,15 +265,17 @@ function creat_section(data_id,colection_data,html_element){
 	
 	//building section content
 	var html_section_content;
+    
+    var kill_funtion = false;
 
 	switch (content["content_type"]) {
   		case "simple-table":
-            if( content["table_settings"]["table_data"] === undefined ){ return 0; }
+            if( content["table_settings"]["table_data"] === undefined ){ kill_funtion = true; }
 
     		html_section_content = "<div id='" + generate_id(content["section_id"],"tab") + "'></div>";
     		break;
         case "double-chart-histogram-color-and-pie":
-            if( content["chart_settings"]["histogram_data"] === undefined ){ return 0; }
+            if( content["chart_settings"]["histogram_data"] === undefined ){ kill_funtion = true; }
 
             html_section_content = "<div class='container_content_double'><div class='container_content_python_chart_a' id='" + generate_id(content["section_id"],"chart_a") + "'></div>";
             html_section_content += "<div class='container_content_python_chart_b' id='" + generate_id(content["section_id"],"chart_b") + "'></div></div>";
@@ -285,7 +287,7 @@ function creat_section(data_id,colection_data,html_element){
         case "simple-chart-pie":
         case "simple-chart-histogram-multi-color":
         case "simple-chart-bar-and-horizontal-line":
-            if( content["chart_settings"]["chart_data"] === undefined ){ return 0; }
+            if( content["chart_settings"]["chart_data"] === undefined ){ kill_funtion = true; }
 
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
@@ -293,6 +295,8 @@ function creat_section(data_id,colection_data,html_element){
     		html_section_content = "<p> This is not a valid section type</p>";
     		break;
 	};
+
+    if (kill_funtion) { return 0;}
 
 	//building html section
 	var new_html_text = "<div class='simple_container'><div class='container_head'><div class='container_head_title'>";
