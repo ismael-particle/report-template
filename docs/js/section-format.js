@@ -250,6 +250,10 @@ function creat_section(data_id,colection_data,html_element){
 	var html_original_content = html_element.content.cloneNode(true);
 	
 
+    if( content["chart_settings"]["chart_data"] === undefined &&  content["table_settings"]["table_data"] === undefined  && content["chart_settings"]["histogram_data"] === undefined){
+        return 0;
+    }
+
 	//Chosing tooltip length base in tooltip content
 	var tooltip_length = content["tooltip_content"].length;
 	var tooltip_segment = "";
@@ -370,10 +374,6 @@ function creat_section(data_id,colection_data,html_element){
             var line_limit = content["chart_settings"]["chart_data"][0][content["chart_settings"]["line_value"]];
             var min_value = 0;
             var max_value = chart_bar_data[0]['x'].length;
-
-            console.log( line_limit );
-            console.log( min_value );
-            console.log( max_value );
 
             var layout = {
                 xaxis: {title: {text: content["chart_settings"]["x_label"],standoff:20}, automargin: true },
