@@ -270,12 +270,18 @@ function creat_section(data_id,colection_data,html_element){
 
 	switch (content["content_type"]) {
   		case "simple-table":
-            if( content["table_settings"]["table_data"] === undefined ){ kill_funtion = true; }
+            if( content["table_settings"]["table_data"] === undefined ){ 
+                console.log('kill function');
+                kill_funtion = true; 
+            }
 
     		html_section_content = "<div id='" + generate_id(content["section_id"],"tab") + "'></div>";
     		break;
         case "double-chart-histogram-color-and-pie":
-            if( content["chart_settings"]["histogram_data"] === undefined ){ kill_funtion = true; }
+            if( content["chart_settings"]["histogram_data"] === undefined ){ 
+                console.log('kill function');
+                kill_funtion = true; 
+            }
 
             html_section_content = "<div class='container_content_double'><div class='container_content_python_chart_a' id='" + generate_id(content["section_id"],"chart_a") + "'></div>";
             html_section_content += "<div class='container_content_python_chart_b' id='" + generate_id(content["section_id"],"chart_b") + "'></div></div>";
@@ -287,7 +293,10 @@ function creat_section(data_id,colection_data,html_element){
         case "simple-chart-pie":
         case "simple-chart-histogram-multi-color":
         case "simple-chart-bar-and-horizontal-line":
-            if( content["chart_settings"]["chart_data"] === undefined ){ kill_funtion = true; }
+            if( content["chart_settings"]["chart_data"] === undefined ){ 
+                console.log('kill function');
+                kill_funtion = true; 
+            }
 
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
