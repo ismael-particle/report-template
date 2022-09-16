@@ -565,6 +565,11 @@ p .details{
 	margin-left: auto;
 }
 
+.container_content_python_chart_c{
+	max-width: 45vw;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 /* This cotain all the contain in the page */
 .main_container{
