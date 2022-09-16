@@ -250,7 +250,7 @@ function creat_section(data_id,colection_data,html_element){
 	var html_original_content = html_element.content.cloneNode(true);
 	
 
-    if( content["chart_settings"]["chart_data"] === undefined &&  content["table_settings"]["table_data"] === undefined  && content["chart_settings"]["histogram_data"] === undefined){
+    if( typeof content["chart_settings"]["chart_data"] === 'undefined' &&  typeof content["table_settings"]["table_data"] === 'undefined'  && typeof content["chart_settings"]["histogram_data"] === 'undefined'){
         return 0;
     }
 
