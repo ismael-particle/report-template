@@ -95,9 +95,6 @@ function creat_histogram_multi_color ( arr, {x, histogram_size, color_groups}){
     var min_limit = Math.floor( Math.min.apply(null,x_total) );
     var max_limit = Math.ceil( Math.max.apply(null,x_total) );
 
-    console.log( Math.max(min_limit) );
-    console.log( Math.min(max_limit) );
-
     var array_data = [
         {
             x: x_data_color_0, 
@@ -297,7 +294,8 @@ function creat_section(data_id,colection_data,html_element){
                 console.log('kill function');
                 kill_funtion = true; 
             }
-
+            console.log(content["chart_settings"]["chart_data"] );
+            
     		html_section_content = "<div class='container_content_python_chart' id='" + generate_id(content["section_id"],"chart") + "'></div>";
    	 		break;
   		default:
