@@ -544,6 +544,9 @@ p .details{
 
 .container_content_double{
   display: flex;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
 }
 
 .container_content_python_chart{
