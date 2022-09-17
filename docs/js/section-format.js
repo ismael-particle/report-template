@@ -588,8 +588,10 @@ function creat_section(data_id,colection_data,html_element){
 
 
 function creat_cards(colection_data,html_element){
-    //Content array
-    //console.log(colection_data);
+
+    colection_data.sort((a, b) => {
+        return b.status - a.status ;
+    });
 
     var html_cards = '';
 
