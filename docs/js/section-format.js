@@ -599,25 +599,27 @@ function creat_cards(colection_data,html_element){
 
     colection_data.forEach( function(item,index){
         var card_total = item.total;
+        var card_title = item.title;
+        var card_main_quantity = (item.main_quantity).toLocaleString('en-US');
+        var card_porcentaje = 0;
 
-        if (card_total != 0 && card_total != '0') {
-            var card_title = item.title;
-            var card_main_quantity = (item.main_quantity).toLocaleString('en-US');
-            var card_porcentaje =  ((item.main_quantity/item.total)*100).toFixed(2);
-            var card_color = generate_action_color(item.status);
-            var card_action_text = generate_action_text(item.status);
-            var card_html_id = generate_card_id();
-
-            card_id_html_array.push({card_id_html:card_html_id,card_id_porcentage:card_porcentaje});
-            
-            card_total = card_total.toLocaleString('en-US');
- 
-            html_cards += `<div class='card_general_box'><div class='card_action_box' style='background-color:${card_color};'><p class='card_action_font'>${card_action_text}</p></div>`;
-            html_cards += `<div class='card_container_box'><div class='card_title_box'> <p class='card_title_font'>${card_title}</p> </div>`;
-            html_cards += `<div class='card_chart_box'><div id='${card_html_id}'><vc-donut v-bind='props'></vc-donut></div></div><div class='card_empty_box'></div>`;
-            html_cards += `<div class='card_quantity_box'><p class='card_quantity_font'>${card_main_quantity}</p></div>`;        
-            html_cards += `<div class='card_detail_box'><p class='card_detail_font'>${card_porcentaje}% of ${card_total} total devices</p>  </div></div></div>`;
+        if (card_total != 0) {
+            card_porcentaje =  ((item.main_quantity/item.total)*100).toFixed(2);
         }
+
+        var card_color = generate_action_color(item.status);
+        var card_action_text = generate_action_text(item.status);
+        var card_html_id = generate_card_id();
+
+        card_id_html_array.push({card_id_html:card_html_id,card_id_porcentage:card_porcentaje});
+            
+        card_total = card_total.toLocaleString('en-US');
+ 
+        html_cards += `<div class='card_general_box'><div class='card_action_box' style='background-color:${card_color};'><p class='card_action_font'>${card_action_text}</p></div>`;
+        html_cards += `<div class='card_container_box'><div class='card_title_box'> <p class='card_title_font'>${card_title}</p> </div>`;
+        html_cards += `<div class='card_chart_box'><div id='${card_html_id}'><vc-donut v-bind='props'></vc-donut></div></div><div class='card_empty_box'></div>`;
+        html_cards += `<div class='card_quantity_box'><p class='card_quantity_font'>${card_main_quantity}</p></div>`;        
+        html_cards += `<div class='card_detail_box'><p class='card_detail_font'>${card_porcentaje}% of ${card_total} total devices</p>  </div></div></div>`;
 
     });
 
