@@ -648,7 +648,7 @@ p .details{
   padding: 5px;
   min-width: 80px;
   text-align: center;
-  height: 24px;
+  height: 14px;
 }
 
 .card_container_box{
@@ -696,7 +696,7 @@ p .details{
 .card_action_font{
 	font-family: 'Graphik';
 	font-style: normal;
-	font-weight: 800;
+	font-weight: 400;
 	font-size: 14px;
 	line-height: 14px;
 	color: #FFF;
@@ -705,7 +705,7 @@ p .details{
 .card_title_font{
 	font-family: 'Graphik';
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 25px;
 	line-height: 48px;
 }
