@@ -1,0 +1,781 @@
+/******************************************************************************************
+	CSS Table
+******************************************************************************************/
+.table_details th { 
+	border: 1px solid #00334F;
+  line-height: 0px;
+  padding: 6px;
+  padding-top: 18px;
+  margin-top: 6px;
+}
+
+.table_details th:first-child,.table_details th:nth-last-child(2){
+  background-color:#E2E4EB;
+}
+
+.table_details p {
+	/* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+*{
+	padding: 0px;
+	margin: 0px;
+}	
+
+body{
+	background:#FFFFFF;
+	background-color:#FFFFFF;
+	margin-top: 15px;
+	color:#FFFFFF;
+}
+
+/******************************************************************************************
+	CSS Fonts
+******************************************************************************************/
+@font-face{
+	font-family:'Graphik';
+	src:  url('fonts/Graphik-Regular-Web.woff2');
+}
+
+@font-face{
+	font-family:'MD IO 0.4';
+	src:  url('fonts/MDIO0.4-Regular.otf');
+}
+
+h1,h2,h3,h4,h5,p,a{
+	font-family: 'Graphik';
+	font-style: normal;
+
+	color: #00334F;
+}
+
+p, a{
+	/* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+b {
+	/* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+p.details{
+	/* Highlight/Highlight Small Regular */
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+.title{
+	/* Headings/Heading 2XLarge Emphasis */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+
+	/* identical to box height, or 160% */
+	text-align: center;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+.subtitle{
+	/* Headings/Heading XLarge Emphasis */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 40px;
+
+	/* identical to box height, or 167% */
+	align-items: center;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+	margin: 0px;
+}
+
+/******************************************************************************************
+	List elements
+******************************************************************************************/
+div.row {
+    display : flex;
+    align-items : center;
+    margin-bottom: 5px;
+}
+
+div.row div {
+	display: flex;
+	height: 20px;
+	width: 20px;
+	border: 1px solid #00334F;
+	margin-right: 8px;
+}
+
+div.little_box_green{
+	background-color: #3AD599;
+}
+
+div.little_box_yellow{
+	background-color: #FAD51D;
+}
+
+div.little_box_orange{
+	background-color: #FF993D;
+}
+
+div.little_box_red{
+	background-color: #F45151;
+}
+
+div.little_box_neutral{
+	background-color: #E2E4EB;
+}
+
+div.list{
+	margin-left: 35px;
+	margin-bottom: 25px;
+}
+
+/******************************************************************************************
+	CSS General Tabs
+******************************************************************************************/
+
+/* Style the tab */
+.tab {
+  	overflow: hidden;
+
+  	/*border: 1px solid #ccc;*/
+	/*  background-color: #f1f1f1;*/
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	/* Auto layout */
+	margin-right: 20px;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+	gap: 10px;
+
+
+	/* Primary Color/Particle Blue 500 */
+	background: #FFFFFF;
+	border: 0.2px solid #00334F;
+
+	/*font*/
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	color: #00334F;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	/* Auto layout */
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+	gap: 10px;
+
+	/* Particle Blue/Particle Blue 600 */
+	background: #00E1FF
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background: #00334F;
+
+		/*font*/
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	color: #FFFFFF;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 0px;
+	padding-top: 15px;
+}
+
+/******************************************************************************************
+	CSS ToolTip
+******************************************************************************************/
+/* ------------------------------------------------
+  [1] Base Styles
+-------------------------------------------------*/
+[aria-label][role~="tooltip"] {
+  position: relative;
+  /* Body/Body large regular */
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: left;
+}
+
+[aria-label][role~="tooltip"]::before,
+[aria-label][role~="tooltip"]::after {
+  	transform: translate3d(0, 0, 0);
+  	-webkit-backface-visibility: hidden;
+  	backface-visibility: hidden;
+  	will-change: transform;
+  	opacity: 0;
+  	pointer-events: none;
+  	transition: all var(--microtip-transition-duration, .18s) var(--microtip-transition-easing, ease-in-out) var(--microtip-transition-delay, 0s);
+  	position: absolute;
+  	box-sizing: border-box;
+  	z-index: 10;
+  	transform-origin: top;
+}
+
+[aria-label][role~="tooltip"]::before {
+  	background-size: 100% auto !important;
+  	content: "";
+}
+
+[aria-label][role~="tooltip"]::after {
+  	background-color: #00334F;
+  	border-radius: 4px;
+  	color: #ffffff;
+  	content: attr(aria-label);
+  	font-size: var(--microtip-font-size, 13px);
+  	font-weight: var(--microtip-font-weight, normal);
+  	text-transform: var(--microtip-text-transform, none);
+  	padding: .5em 1em;
+  	white-space: nowrap;
+  	box-sizing: content-box;
+}
+
+[aria-label][role~="tooltip"]:hover::before,
+[aria-label][role~="tooltip"]:hover::after,
+[aria-label][role~="tooltip"]:focus::before,
+[aria-label][role~="tooltip"]:focus::after {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+/* ------------------------------------------------
+  [2] Position Modifiers
+-------------------------------------------------*/
+
+[role~="tooltip"][data-microtip-position|="top"]::before {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236px%22%20height%3D%2212px%22%3E%3Cpath%20fill%3D%22rgba%2817,%2017,%2017,%200.9%29%22%20transform%3D%22rotate%280%29%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E") no-repeat;
+  height: 6px;
+  width: 18px;
+  margin-bottom: 5px;
+}
+
+[role~="tooltip"][data-microtip-position|="top"]::after {
+  margin-bottom: 11px;
+}
+
+[role~="tooltip"][data-microtip-position|="top"]::before {
+  transform: translate3d(-50%, 0, 0);
+  bottom: 100%;
+  left: 50%;
+}
+
+[role~="tooltip"][data-microtip-position|="top"]:hover::before {
+  transform: translate3d(-50%, -5px, 0);
+}
+
+[role~="tooltip"][data-microtip-position|="top"]::after {
+  transform: translate3d(-50%, 0, 0);
+  bottom: 100%;
+  left: 50%;
+}
+
+[role~="tooltip"][data-microtip-position="top"]:hover::after {
+  transform: translate3d(-50%, -5px, 0);
+}
+
+/* ------------------------------------------------
+  [2.1] Top Left
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position="top-left"]::after {
+  transform: translate3d(calc(-100% + 16px), 0, 0);
+  bottom: 100%;
+}
+
+[role~="tooltip"][data-microtip-position="top-left"]:hover::after {
+  transform: translate3d(calc(-100% + 16px), -5px, 0);
+}
+
+
+/* ------------------------------------------------
+  [2.2] Top Right
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position="top-right"]::after {
+  transform: translate3d(calc(0% + -16px), 0, 0);
+  bottom: 100%;
+}
+
+[role~="tooltip"][data-microtip-position="top-right"]:hover::after {
+  transform: translate3d(calc(0% + -16px), -5px, 0);
+}
+
+
+/* ------------------------------------------------
+  [2.3] Bottom
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position|="bottom"]::before {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236px%22%20height%3D%2212px%22%3E%3Cpath%20fill%3D%22rgba%2817,%2017,%2017,%200.9%29%22%20transform%3D%22rotate%28180%2018%206%29%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E") no-repeat;
+  height: 6px;
+  width: 18px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+[role~="tooltip"][data-microtip-position|="bottom"]::after {
+  margin-top: 11px;
+}
+
+[role~="tooltip"][data-microtip-position|="bottom"]::before {
+  transform: translate3d(-50%, -10px, 0);
+  bottom: auto;
+  left: 50%;
+  top: 100%;
+}
+
+[role~="tooltip"][data-microtip-position|="bottom"]:hover::before {
+  transform: translate3d(-50%, 0, 0);
+}
+
+[role~="tooltip"][data-microtip-position|="bottom"]::after {
+  transform: translate3d(-50%, -10px, 0);
+  top: 100%;
+  left: 50%;
+}
+
+[role~="tooltip"][data-microtip-position="bottom"]:hover::after {
+  transform: translate3d(-50%, 0, 0);
+}
+
+
+/* ------------------------------------------------
+  [2.4] Bottom Left
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position="bottom-left"]::after {
+  transform: translate3d(calc(-100% + 16px), -10px, 0);
+  top: 100%;
+}
+
+[role~="tooltip"][data-microtip-position="bottom-left"]:hover::after {
+  transform: translate3d(calc(-100% + 16px), 0, 0);
+}
+
+
+/* ------------------------------------------------
+  [2.5] Bottom Right
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position="bottom-right"]::after {
+  transform: translate3d(calc(0% + -16px), -10px, 0);
+  top: 100%;
+}
+
+[role~="tooltip"][data-microtip-position="bottom-right"]:hover::after {
+  transform: translate3d(calc(0% + -16px), 0, 0);
+}
+
+
+/* ------------------------------------------------
+  [2.6] Left
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position="left"]::before,
+[role~="tooltip"][data-microtip-position="left"]::after {
+  bottom: auto;
+  left: auto;
+  right: 100%;
+  top: 50%;
+  transform: translate3d(10px, -50%, 0);
+}
+
+[role~="tooltip"][data-microtip-position="left"]::before {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2212px%22%20height%3D%2236px%22%3E%3Cpath%20fill%3D%22rgba%2817,%2017,%2017,%200.9%29%22%20transform%3D%22rotate%28-90%2018%2018%29%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E") no-repeat;
+  height: 18px;
+  width: 6px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+[role~="tooltip"][data-microtip-position="left"]::after {
+  margin-right: 11px;
+}
+
+[role~="tooltip"][data-microtip-position="left"]:hover::before,
+[role~="tooltip"][data-microtip-position="left"]:hover::after {
+  transform: translate3d(0, -50%, 0);
+}
+
+
+/* ------------------------------------------------
+  [2.7] Right
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-position="right"]::before,
+[role~="tooltip"][data-microtip-position="right"]::after {
+  bottom: auto;
+  left: 100%;
+  top: 50%;
+  transform: translate3d(-10px, -50%, 0);
+}
+
+[role~="tooltip"][data-microtip-position="right"]::before {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2212px%22%20height%3D%2236px%22%3E%3Cpath%20fill%3D%22rgba%2817,%2017,%2017,%200.9%29%22%20transform%3D%22rotate%2890%206%206%29%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E") no-repeat;
+  height: 18px;
+  width: 6px;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+[role~="tooltip"][data-microtip-position="right"]::after {
+  margin-left: 11px;
+}
+
+[role~="tooltip"][data-microtip-position="right"]:hover::before,
+[role~="tooltip"][data-microtip-position="right"]:hover::after {
+  transform: translate3d(0, -50%, 0);
+}
+
+/* ------------------------------------------------
+  [3] Size
+-------------------------------------------------*/
+[role~="tooltip"][data-microtip-size="documentation"]::after {
+  white-space: initial;
+  width: 97px;
+}
+
+[role~="tooltip"][data-microtip-size="csv-file"]::after {
+  white-space: initial;
+  width: 97px;
+}
+
+[role~="tooltip"][data-microtip-size="small"]::after {
+  white-space: initial;
+  width: 180px;
+}
+
+[role~="tooltip"][data-microtip-size="medium"]::after {
+  white-space: initial;
+  width: 360px;
+}
+
+[role~="tooltip"][data-microtip-size="large"]::after {
+  white-space: initial;
+  width: 540px;
+}
+
+[role~="tooltip"][data-microtip-size="extra-large"]::after {
+  white-space: initial;
+  width: 720px;
+}
+
+/******************************************************************************************
+	CSS DIVs for organization
+********************************************************************************************/
+/* This contain similar information in a graphic box*/
+.topic_box {   
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border: 1.5px solid #00334F;
+	padding: 20px;
+	padding-top: 15px;
+}
+
+.simple_container{
+  	/*display: flex;*/
+}
+
+.container_head{
+	display: flex;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.container_head_title{
+	min-width: fit-content;
+	padding: 0px;
+}
+
+.container_head_tooltip{
+	width:	42px;
+	padding: 0px;
+	justify-content: left;
+}
+.container_head_separator{
+	width: 100%;
+	white-space: normal;
+}
+
+.container_head_download{
+	width:	44px;
+	padding: 0px;
+	justify-content: right;
+}
+
+.container_head_docs {
+	float:right;
+	width:	42px;
+	padding: 0px;
+	justify-content: right;
+}
+
+.container_head_tooltip img{
+	height:	32px;
+	margin:	0px;
+	padding: 0px;
+	padding-top: 6px;
+}
+
+.container_head_download img{
+	width:	44px;
+	margin:	0px;
+	padding: 0px;
+	padding-top: 6px;
+}
+
+.container_head_docs img{
+	width:	42px;
+	margin:	0px;
+	padding: 0px;
+	padding-top: 6px;
+}
+
+.container_head_tooltip button,.container_head_download button{
+	background: none;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+.container_content{
+	margin-bottom: 25px;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+
+.container_content_double{
+  	display: flex;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+
+.container_content_python_chart{
+	max-width: 85vw;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container_content_python_chart_a{
+	max-width: 55vw;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.container_content_python_chart_b{
+	max-width: 30vw;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container_content_python_chart_c{
+	max-width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* This cotain all the contain in the page */
+.main_container{
+	margin-top: 25px;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+.chart_ploty{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.report_subtitle{
+	text-align: left;
+	
+	/* Highlight/Highlight Small Regular */
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+
+	/* Midnight/Midnight 500 */
+	color: #00334F;
+}
+
+.report_title .title{
+	text-align: left;
+	margin: 0px;
+	padding-top: 18px;
+	line-height: 32px;
+}
+
+.logo_title{
+	width: 100%;
+}
+
+.logo {
+	text-align: left;
+	width: 15%;
+}
+
+.logo img{
+	width:160px;
+}
+
+.page_head{
+	align-items: left;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+/****/
+ 
+.container_cards {
+	padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  grid-auto-rows: minmax(230px, 230px);
+}
+
+.card_general_box{
+	border: 1px solid #00334F;
+	position: relative;
+}
+
+.card_action_box{ 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f45;
+  padding: 5px;
+  min-width: 80px;
+  text-align: center;
+  height: 24px;
+}
+
+.card_container_box{
+	width: 100%;
+	position: absolute;
+  top: 30px;
+
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  grid-template-columns: 155px auto;
+}
+
+.card_title_box{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding-left:20px ;
+}
+
+.card_chart_box{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: row2-start;
+  grid-row-end: 5;
+}
+
+.card_empty_box{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  height: 45px;
+}
+
+.card_quantity_box{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  height: 60px;
+}
+
+.card_detail_box{
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.card_action_font{
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 14px;
+	color: #FFF;
+}
+
+.card_title_font{
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 48px;
+}
+
+.card_quantity_font{
+	font-family: 'MD IO 0.4';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.card_detail_font{
+	font-family: 'Graphik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+}
+
