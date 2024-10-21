@@ -1,8 +1,8 @@
 /* --------------------------> Global constants <--------------------------- */
 //icons resources
-const icon_dowload = "https://ismaelsb.dev/CAD_v2/img/download.png"; 
-const icon_docs = "https://ismaelsb.dev/CAD_v2//img/docs.png";
-const icon_support = "https://ismaelsb.dev/CAD_v2//img/support.png";
+const icon_dowload = "https://ismael-particle.github.io/report-template/img/download.png"; 
+const icon_docs = "https://ismael-particle.github.io/report-template/img/docs.png";
+const icon_support = "https://ismael-particle.github.io/report-template/img/support.png";
 
 //General colors code
 const color_red     = "#F45151"; //4
