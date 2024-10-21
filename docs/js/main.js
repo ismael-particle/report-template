@@ -208,16 +208,16 @@ switch (environment + '-' + commercial_model_customer + '-' + display_dasboard) 
 		loadScript("/js/process/sandbox-basic.js", MiArchivoCargado);
 		break;
 	case 'prod-enterprise-Basic':
-		loadScript("https://ismaelsb.dev/CAD_v2/js/process/enterprise-basic.js", MiArchivoCargado);
+		loadScript("https://ismael-particle.github.io/report-template/js/process/enterprise-basic.js", MiArchivoCargado);
 		break;
 	case 'prod-growth-Basic':
-		loadScript("https://ismaelsb.dev/CAD_v2/js/process/growth-basic.js", MiArchivoCargado);
+		loadScript("https://ismael-particle.github.io/report-template/js/process/growth-basic.js", MiArchivoCargado);
 		break;
 	case 'prod-domain-Basic':
-		loadScript("https://ismaelsb.dev/CAD_v2/js/process/domain-basic.js", MiArchivoCargado);
+		loadScript("https://ismael-particle.github.io/report-template/js/process/domain-basic.js", MiArchivoCargado);
 		break;
 	case 'prod-sandbox-Basic':
-		loadScript("https://ismaelsb.dev/CAD_v2/js/process/sandbox-basic.js", MiArchivoCargado);
+		loadScript("https://ismael-particle.github.io/report-template/js/process/sandbox-basic.js", MiArchivoCargado);
 		break;
 	default:
 		break;
